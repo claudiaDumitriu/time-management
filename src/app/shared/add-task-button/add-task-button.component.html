@@ -1,0 +1,53 @@
+<div class="dropdown">
+  <button class="btn-add-task" (click)="toggleDropdown()">ADD TASK</button>
+  <ul *ngIf="isDropdownOpen" class="dropdown-menu">
+    <li>
+      <a href="#">
+        <img src="assets/plus-large-svgrepo-com.svg" alt="" />
+        <span class="">New Task</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img
+          src="/assets/coffee-mug-drink-beverage-break-time-cafe-svgrepo-com.svg"
+          alt=""
+        />
+        <span class="">Short Break (5 min)</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img
+          src="assets/coffee-mug-drink-beverage-break-time-cafe-svgrepo-com.svg"
+          alt=""
+        />
+        <span class="">Long Break (15 min)</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="assets/smile-circle-svgrepo-com.svg" alt="" />
+        <span class=""> Short Lunch (30 min)</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="assets/email-1-svgrepo-com.svg" />
+        <span class="">Check Emails (30 min)</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="assets/book-open-svgrepo-com.svg" />
+        <span class="">Report Timesheets (15 min)</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="assets/star-svgrepo-com.svg" alt="" />
+        <span class="">Personal Tasks (30 min)</span>
+      </a>
+    </li>
+  </ul>
+</div>

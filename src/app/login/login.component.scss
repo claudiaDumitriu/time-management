@@ -1,0 +1,165 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  background-image: linear-gradient(
+    to right bottom,
+    #e12a2a,
+    #e15b3f,
+    #e07d5a,
+    #de9a7b,
+    #d9b4a0
+  );
+}
+.register-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 30px;
+}
+.register-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-logo h2 {
+  color: #252323;
+  font-size: 18px;
+}
+.header-logo img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
+    hue-rotate(357deg) brightness(145%) contrast(80%);
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.register-header h3 {
+  color: #a79999;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 13px;
+}
+.register-header h1 {
+  color: #252323;
+  font-family: sans-serif;
+  font-weight: 300;
+  margin-top: 18px;
+  font-size: 29px;
+}
+.register-auth {
+  width: 100%;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.form-control {
+  position: relative;
+  margin-bottom: 20px;
+  width: -webkit-fill-available;
+}
+.form-group {
+  width: -webkit-fill-available;
+}
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #b4b3b3;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  background: transparent;
+}
+input.ng-touched.ng-invalid {
+  color: red;
+}
+.form-label {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #6d6565;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  top: 0;
+  left: 5px;
+  font-size: 12px;
+  color: #9b9797;
+}
+
+.footer-description {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: #a79999;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+.btn-login {
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  background-color: #f42727;
+  color: white;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+}
+.btn-register {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #f3f0f0;
+  color: black;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+}
+.btn-login:disabled {
+  background-color: #e2e0e0;
+  color: #9b9797;
+}
+.login-btn {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.forgot-password {
+  justify-content: flex-start;
+  width: 100%;
+  color: #f04040;
+  font-size: 12px;
+  display: flex;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.form-control a {
+  margin-top: 20px;
+}
+.control-error {
+  color: red;
+}
