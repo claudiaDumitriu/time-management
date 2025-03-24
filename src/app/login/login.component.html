@@ -1,0 +1,68 @@
+<div class="register-container">
+  <div class="register-details">
+    <div class="register-header">
+      <div class="header-logo">
+        <img src="assets/stopwatch-svgrepo-com.svg" alt="" />
+        <h2>Ness's Pomodoro</h2>
+      </div>
+      <h1 class="header-title">Login</h1>
+      <h3 class="header-subtitle">description</h3>
+    </div>
+
+    <div class="register-auth">
+      <form [formGroup]="loginForm" class="register-form">
+        <div class="form-control">
+          <input
+            class="form-input"
+            type="text"
+            id="username"
+            name="username"
+            formControlName="username"
+            placeholder=" "
+            required
+          />
+          <label class="form-label" for="username">Username or email</label>
+          <app-error-message
+            [control]="loginForm.get('username')"
+          ></app-error-message>
+        </div>
+
+        <div class="form-control">
+          <input
+            class="form-input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder=" "
+            required
+            formControlName="password"
+          />
+          <label class="form-label" for="password">Password</label>
+          <app-error-message
+            [control]="loginForm.get('password')"
+          ></app-error-message>
+        </div>
+        <div class="forgot-password"><a>FORGOT PASSWORD?</a></div>
+
+        <div class="login-btn">
+          <button
+            type="submit"
+            class="btn-login"
+            (click)="taskManagerPage()"
+            [disabled]="!isFormValid"
+          >
+            LOG IN
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <button class="btn-register" (click)="registerPage()">
+      DON'T HAVE AN ACCOUNT? REGISTER HERE
+    </button>
+
+    <footer class="footer-description">
+      A Ness Digital Engineering Product.
+    </footer>
+  </div>
+</div>

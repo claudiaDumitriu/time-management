@@ -1,0 +1,128 @@
+.sidebar-container {
+  display: flex;
+  height: 100%;
+  background-color: white;
+
+  border-radius: 15px;
+  margin-right: 15px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a img {
+  width: 25px;
+  height: 25px;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+.sidebar-list li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #5e5757;
+  padding: 10px;
+  transition: background 0.3s ease-in-out;
+  gap: 5px;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+
+  div {
+    font-size: 14px;
+  }
+}
+.sidebar-list li a:hover {
+  background: #fd5b2e;
+  color: white;
+}
+.sidebar-list li a:hover img {
+  filter: invert(100%) brightness(100%);
+}
+.sidebar-nav ul:first-of-type li:first-child a {
+  pointer-events: none;
+  cursor: default;
+  background: none !important;
+  color: inherit !important;
+}
+
+.sidebar-list li:not(:last-child):first-child img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
+    hue-rotate(357deg) brightness(145%) contrast(80%);
+}
+.logout li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #5e5757;
+  padding: 10px;
+  transition: background 0.3s ease-in-out;
+  gap: 5px;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+}
+.sidebar-list li a,
+.logout li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #5e5757;
+  padding: 10px;
+  transition: background 0.3s ease-in-out;
+  gap: 5px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+/* Stil specific doar pentru .sidebar-list li a */
+.sidebar-list li a div {
+  font-size: 14px;
+}
+.logout li a img {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(3000%)
+    hue-rotate(-10deg) brightness(80%) contrast(100%);
+}
+
+.logout a:hover img {
+  filter: invert(100%) brightness(100%);
+}
+
+.logout a .nav-text {
+  color: #ba2e2e;
+}
+
+/* Culoare la hover */
+.logout a:hover .nav-text {
+  color: white;
+}
+
+.sidebar-list a.active {
+  background-color: #fd5b2e;
+}
+
+.sidebar-list a.active img {
+  filter: brightness(0) invert(1);
+}
+
+.sidebar-list a.active .nav-text {
+  color: white;
+}
+.logout li a:hover {
+  background: #fd5b2e;
+  color: white;
+}
+.logout li a:hover img {
+  filter: invert(100%) brightness(100%);
+}

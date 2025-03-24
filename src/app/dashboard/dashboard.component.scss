@@ -1,0 +1,41 @@
+.layout-container {
+  display: grid;
+  grid-template-columns: 120px auto;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  background-color: #ededed;
+  padding: 15px;
+}
+
+// app-sidebar {
+//   grid-row: 1 / span 2;
+// }
+
+/* Header fix sus */
+.main-content {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Header fix + Content care ocupă restul */
+  grid-column: 2; /* Se află lângă sidebar */
+  height: 100%;
+}
+
+/* Header fix sus */
+.header {
+  grid-row: 1;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Conținutul paginii */
+.content {
+  background-color: white;
+  overflow: auto;
+  height: 866px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

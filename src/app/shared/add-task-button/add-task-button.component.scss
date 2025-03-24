@@ -1,0 +1,58 @@
+.btn-add-task {
+  width: 100px;
+  height: 30px;
+  background-color: #fd5b2e;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  background: white;
+  border: 1px solid #ccc;
+  left: -165px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 265px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown-menu li:hover {
+  background: #f1f1f1;
+}
+.dropdown-menu li img {
+  width: 25px;
+  height: 25px;
+  transition: filter 0.3s ease;
+}
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  color: #5e5757;
+  transition: color 0.3s ease;
+}
+.dropdown-menu li:first-child {
+  border-bottom: 1px solid #ededed;
+}
+.dropdown-menu li:hover {
+  background: #fd5b2e;
+}
+.dropdown-menu li:hover a {
+  color: white;
+}
+.dropdown-menu li:hover img {
+  filter: brightness(0) invert(1);
+}

@@ -1,0 +1,51 @@
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0px;
+  min-width: 500px;
+}
+.modal-content {
+  h2 {
+    font-size: 19px;
+    font-family: sans-serif;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    background: #e0e0e0;
+    margin: 0px;
+  }
+  p {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+  ol {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 13px;
+    padding-left: 40px;
+  }
+}
+.mat-mdc-dialog-surface {
+  border-radius: 0px;
+}
+.btn-container {
+  height: 50px;
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.modal-btn {
+  border-style: none;
+  background-color: unset;
+  color: #f55e5e;
+  font-weight: 600;
+  padding-left: 10px;
+}
