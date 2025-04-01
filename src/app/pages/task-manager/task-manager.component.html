@@ -1,5 +1,16 @@
-<div class="no-tasks">
+<div class="no-tasks" *ngIf="!isPopupVisible && taskList.length === 0">
   <img src="assets/data-histogram-svgrepo-com.svg" alt="" />
   <label for="">No tasks to be shown</label>
-  <app-add-task-button></app-add-task-button>
+  <app-add-task-button (openNewTask)="showPopup()"></app-add-task-button>
 </div>
+
+<app-new-task
+  *ngIf="isPopupVisible"
+  (addButton)="handleTaskAdded($event)"
+  [isPopupOpen]="isPopupVisible"
+></app-new-task>
+
+<app-display-task
+  *ngIf="!isPopupVisible && taskList.length > 0"
+  [taskList]="taskList"
+></app-display-task>

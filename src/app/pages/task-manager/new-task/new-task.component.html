@@ -1,0 +1,67 @@
+<div *ngIf="isPopupOpen" class="popup-container">
+  <div class="popup-title">
+    <h2>Add Task</h2>
+    <button class="close-btn">X</button>
+  </div>
+
+  <form action="" class="new-task-form">
+    <div class="form-control test">
+      <input class="form-input" type="text" name="name" placeholder=" " />
+
+      <label class="form-label" for="name">Name task</label>
+    </div>
+    <div class="form-control">
+      <select class="form-input" [(ngModel)]="selectedOption" name="priority">
+        <option value="" disabled selected hidden>Select Priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <label
+        class="form-label"
+        [class.active]="selectedOption && selectedOption !== ''"
+        >Priority</label
+      >
+    </div>
+    <div class="form-control">
+      <input
+        type="time"
+        class="form-input"
+        name="duration"
+        [(ngModel)]="taskDuration"
+        step="900"
+      />
+      <label class="form-label" for="duration">Duration</label>
+    </div>
+    <div class="form-control">
+      <select class="form-input" name="status">
+        <option>To Do</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+      </select>
+      <label class="form-label" for="status">Status</label>
+    </div>
+    <div class="form-control">
+      <input class="form-input" type="date" name="dateAdded" placeholder=" " />
+      <label class="form-label" for="dateAdded">Date Added</label>
+    </div>
+    <div class="form-control">
+      <select class="form-input" name="taskType">
+        <option>Option1</option>
+        <option>Option2</option>
+        <option>Option3</option>
+      </select>
+
+      <label class="form-label" for="taskType">Task Type</label>
+    </div>
+    <div class="form-control">
+      <input class="form-input" type="date" name="deadline" placeholder=" " />
+      <label class="form-label" for="deadline">Deadline</label>
+    </div>
+
+    <div class="button-group">
+      <button>DISMISS</button>
+      <button (click)="taskAdded()">ADD</button>
+    </div>
+  </form>
+</div>
