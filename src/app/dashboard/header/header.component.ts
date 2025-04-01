@@ -14,4 +14,7 @@ export class HeaderComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+  handleNewTask() {
+    console.log('claudia');
+  }
 }

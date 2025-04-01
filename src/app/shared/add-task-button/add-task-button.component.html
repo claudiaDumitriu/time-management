@@ -1,8 +1,8 @@
 <div class="dropdown">
   <button class="btn-add-task" (click)="toggleDropdown()">ADD TASK</button>
   <ul *ngIf="isDropdownOpen" class="dropdown-menu">
-    <li>
-      <a href="#">
+    <li (click)="sendMessageToParent()">
+      <a>
         <img src="assets/plus-large-svgrepo-com.svg" alt="" />
         <span class="">New Task</span>
       </a>

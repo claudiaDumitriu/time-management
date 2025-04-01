@@ -7,19 +7,13 @@
   padding: 15px;
 }
 
-// app-sidebar {
-//   grid-row: 1 / span 2;
-// }
-
-/* Header fix sus */
 .main-content {
   display: grid;
-  grid-template-rows: auto 1fr; /* Header fix + Content care ocupă restul */
-  grid-column: 2; /* Se află lângă sidebar */
+  grid-template-rows: auto 1fr;
+  grid-column: 2;
   height: 100%;
 }
 
-/* Header fix sus */
 .header {
   grid-row: 1;
   color: white;
@@ -28,7 +22,6 @@
   border-top-right-radius: 15px;
 }
 
-/* Conținutul paginii */
 .content {
   background-color: white;
   overflow: auto;

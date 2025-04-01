@@ -1,0 +1,21 @@
+<table *ngIf="taskList.length > 0">
+  <tr>
+    <th>Nume Task</th>
+    <th>Durată (minute)</th>
+    <th>Descriere</th>
+    <th>Prioritate</th>
+    <th>Status</th>
+    <th>Data</th>
+    <th>Tip</th>
+    <th>Deadline</th>
+  </tr>
+  <tr *ngFor="let task of taskList">
+    <td>{{ task.name }}</td>
+    <td>{{ task.duration }}</td>
+    <td>{{ task.priority || "Normal" }}</td>
+    <td>{{ task.status }}</td>
+    <td>{{ task.date | date : "dd/MM/yyyy" }}</td>
+    <td>{{ task.type }}</td>
+    <td>{{ task.deadline | date : "dd/MM/yyyy" }}</td>
+  </tr>
+</table>
