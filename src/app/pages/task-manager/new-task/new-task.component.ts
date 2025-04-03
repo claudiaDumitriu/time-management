@@ -5,6 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Task } from '../../../models/task.model';
+import { TaskService } from '../../../services/task.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-new-task',
@@ -22,16 +24,11 @@ import { Task } from '../../../models/task.model';
 export class NewTaskComponent {
   @Input() isPopupOpen!: boolean;
   @Output() addButton = new EventEmitter<Task>();
+  taskList: Observable<Task[]>;
 
-  task: Task = new Task(
-    'Task Default',
-    'Medium',
-    30,
-    'To Do',
-    new Date(),
-    'Work',
-    new Date(new Date().setDate(new Date().getDate() + 7))
-  );
+  constructor(private taskService: TaskService) {
+    this.taskList = this.taskService.taskListObs;
+  }
 
   taskDuration: number = 15;
 
@@ -43,8 +40,20 @@ export class NewTaskComponent {
   onSelectChange(event: Event) {}
 
   taskAdded() {
-    console.log('Task has been added', event);
-    this.addButton.emit(this.task);
+    console.log('task added');
+    const newTask: Task = {
+      name: 'New Task claudia',
+      priority: 'High',
+      duration: 60,
+      status: 'To Do',
+      date: new Date(),
+      type: 'Work',
+      deadline: new Date(new Date().setDate(new Date().getDate() + 7)),
+    };
+
+    this.taskService.addTask(newTask);
+    this.taskList = this.taskService.taskListObs;
+
     this.isPopupOpen = false;
   }
 }

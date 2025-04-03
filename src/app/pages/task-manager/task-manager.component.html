@@ -10,7 +10,4 @@
   [isPopupOpen]="isPopupVisible"
 ></app-new-task>
 
-<app-display-task
-  *ngIf="!isPopupVisible && taskList.length > 0"
-  [taskList]="taskList"
-></app-display-task>
+<app-display-task></app-display-task>
