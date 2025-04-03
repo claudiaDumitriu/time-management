@@ -31,4 +31,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+.not-centered {
+  display: table;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
 }

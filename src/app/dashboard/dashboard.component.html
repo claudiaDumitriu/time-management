@@ -6,7 +6,10 @@
       <app-header></app-header>
     </header>
 
-    <main class="content">
+    <main
+      class="content"
+      [class.not-centered]="(taskList | async)?.length ?? 0 > 0"
+    >
       <router-outlet></router-outlet>
     </main>
   </div>

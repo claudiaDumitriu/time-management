@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Task } from '../../../models/task.model';
+import { Observable } from 'rxjs';
+import { TaskService } from '../../../services/task.service';
 
 @Component({
   selector: 'app-display-task',
@@ -10,5 +12,9 @@ import { Task } from '../../../models/task.model';
   styleUrl: './display-task.component.scss',
 })
 export class DisplayTaskComponent {
-  @Input() taskList!: Task[];
+  taskList: Observable<Task[]>;
+
+  constructor(private taskService: TaskService) {
+    this.taskList = this.taskService.taskListObs;
+  }
 }

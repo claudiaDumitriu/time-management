@@ -1,21 +1,20 @@
-<table *ngIf="taskList.length > 0">
-  <tr>
-    <th>Nume Task</th>
-    <th>Durată (minute)</th>
-    <th>Descriere</th>
-    <th>Prioritate</th>
-    <th>Status</th>
-    <th>Data</th>
-    <th>Tip</th>
-    <th>Deadline</th>
-  </tr>
-  <tr *ngFor="let task of taskList">
-    <td>{{ task.name }}</td>
-    <td>{{ task.duration }}</td>
-    <td>{{ task.priority || "Normal" }}</td>
-    <td>{{ task.status }}</td>
-    <td>{{ task.date | date : "dd/MM/yyyy" }}</td>
-    <td>{{ task.type }}</td>
-    <td>{{ task.deadline | date : "dd/MM/yyyy" }}</td>
+<table *ngIf="(taskList | async)?.length ?? 0 > 0" class="task-table">
+  <tr *ngFor="let task of taskList | async" class="task-row">
+    <td colspan="1">
+      <div class="task-info">
+        <div>{{ task.status }}</div>
+        <div>{{ task.name }}</div>
+        <div>
+          {{ task.deadline | date : "dd/MM/yyyy" }}
+        </div>
+      </div>
+    </td>
+
+    <td colspan="1">
+      <div class="task-overview">
+        <div>{{ task.priority }}</div>
+        <div>{{ task.duration }}</div>
+      </div>
+    </td>
   </tr>
 </table>
