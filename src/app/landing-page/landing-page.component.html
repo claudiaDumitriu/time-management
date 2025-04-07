@@ -4,22 +4,23 @@
       <img src="assets/stopwatch-svgrepo-com.svg" alt="" />
       <h2>Ness's Pomodoro</h2>
     </div>
-
     <h1 class="header-title">Pomodoro Time Management</h1>
     <h3 class="header-subtitle">
       Get a clear overview of your achievements in one place
     </h3>
-
     <div class="header-buttons">
-      <button class="btn btn-login" (click)="loginPage()">LOG IN</button>
-      <button class="btn btn-signup" (click)="registerPage()">SIGN UP</button>
+      <button class="btn btn-login" (click)="navigateTo('login')">
+        LOG IN
+      </button>
+      <button class="btn btn-signup" (click)="navigateTo('register')">
+        SIGN UP
+      </button>
     </div>
   </header>
-
   <main class="time-mgmt-info">
     <section class="time-mgmt-details how-it-works">
-      <h2 class="time-mgm-title how-it-works-title">How it Works</h2>
-      <p class="time-mgmt-description">
+      <h2 class="section-title how-it-works-title">How it Works</h2>
+      <p class="section-description how-it-works-description">
         The time management application streamlines your productivity with an
         intuitive interface. Quickly log in, create tasks, and track your
         progress through automated or manual sessions—all from a user-friendly
@@ -29,13 +30,12 @@
     <div class="time-mgmt-details how-it-works-img">
       <img src="assets/pomodoro.jpg" alt="" />
     </div>
-
     <div class="time-mgmt-details how-it-helps-img">
       <img src="assets/pomodoro2.webp" alt="" />
     </div>
     <section class="time-mgmt-details how-it-helps">
-      <h2 class="time-mgm-title how-it-helps-title">How it Helps You</h2>
-      <p class="time-mgmt-description">
+      <h2 class="section-title">How it Helps You</h2>
+      <p class="section-description how-it-helps-description">
         This application boosts your efficiency by making task creation and
         management effortless. It keeps you organized by automating progress
         tracking and allowing you to customize your workflow. When tasks are
@@ -43,13 +43,11 @@
       </p>
     </section>
   </main>
-
-  <footer class="time-mgmt-footer">
+  <footer class="footer-container">
     <div class="footer-logo">
       <img src="assets/reshot-icon-timer-8VAPXJD2CB-52a21.svg" alt="" />
-      <h3 class="footer-title">Ness's Pomodoro 2024</h3>
+      <h3 class="footer-title">Ness's Pomodoro</h3>
     </div>
-
     <div class="footer-description">
       A Ness Digital Engineering product. Part of 2024's Internship
     </div>
