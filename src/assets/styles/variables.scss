@@ -1,9 +1,3 @@
-/* Primary Colors */
-$primary-color: #f5f5f5;
-
-/*  Image Filters */
-$img-filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
-  hue-rotate(357deg) brightness(145%) contrast(80%);
-
-/* Font Family */
 $font-sans: "sans-serif";
+$mobile: 450px;
+$tablet: 768px;

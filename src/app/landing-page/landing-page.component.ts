@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 export class LandingPageComponent {
   constructor(private router: Router) {}
 
-  navigateTo(page: string) {
-    this.router.navigate([`/${page}`]);
+  registerPage() {
+    this.router.navigate(['/register']);
+  }
+
+  loginPage() {
+    this.router.navigate(['/login']);
   }
 }

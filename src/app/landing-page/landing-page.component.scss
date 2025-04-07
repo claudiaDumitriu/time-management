@@ -1,10 +1,7 @@
 @import "../../assets/styles/variables";
+@import "../../assets/styles/colors";
+@import "../../assets/styles/mixins";
 
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .time-mgmt-container {
   display: flex;
   flex-direction: column;
@@ -13,7 +10,7 @@
   min-width: 230px;
 }
 .time-mgmt-header {
-  @extend %flex-center;
+  @include flex-center;
   flex-direction: column;
   padding: 0 15px;
   background-image: radial-gradient(
@@ -21,18 +18,18 @@
     #ff5151 0%,
     #ff9666 100%
   );
-  color: $primary-color;
+  color: $light-grey;
   min-height: 400px;
 }
 .header-logo {
-  @extend %flex-center;
+  @include flex-center;
   font-size: 18px;
   font-weight: 500;
   gap: 5px;
   padding-bottom: 20px;
 }
 .footer-logo {
-  @extend %flex-center;
+  @include flex-center;
   font-size: 14px;
   gap: 5px;
 }
@@ -46,21 +43,23 @@
   font-family: $font-sans;
   font-weight: 600;
   margin: 0px;
+  color: white;
 }
 .header-title {
   font-size: 30px;
   line-height: normal;
   margin: 0px;
+  color: white;
 }
 .header-subtitle {
   font-size: 14px;
   line-height: normal;
   padding-top: 10px;
-  color: $primary-color;
+  color: $light-grey;
   margin: 0px;
 }
 .header-buttons {
-  @extend %flex-center;
+  @include flex-center;
   gap: 15px;
   margin-top: 40px;
 }
@@ -68,19 +67,18 @@
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  background-color: steelblue;
-  color: $primary-color;
+  color: $light-grey;
   cursor: pointer;
 }
 .btn-login {
-  background-color: #ff3d00;
+  background-color: $bright-orange;
   font-size: 12px;
   width: 100px;
   border-radius: 3px;
 }
 
 .btn-signup {
-  background-color: $primary-color;
+  background-color: $light-grey;
   color: black;
   font-size: 12px;
   width: 100px;
@@ -101,14 +99,14 @@
   font-family: $font-sans;
   font-weight: 400;
   font-size: 35px;
-  color: #000000de;
+  color: $deep-black;
   letter-spacing: 0.25px;
   margin: 0px 30px;
 }
 .section-description {
   display: flex;
   padding: 20px 32px 0;
-  color: #00000099;
+  color: $black-light;
   font-size: 16px;
   font-weight: 400;
   font-family: $font-sans;
@@ -127,7 +125,7 @@
   display: flex;
   line-height: normal;
   margin: 0px;
-  color: rgba(0, 0, 0, 0.8705882353);
+  color: $black-light;
   font-family: $font-sans;
   font-weight: 500;
   font-size: 15px;
@@ -137,14 +135,14 @@
   align-items: end;
 }
 .footer-container {
-  @extend %flex-center;
+  @include flex-center;
   justify-content: space-between;
   min-width: 200px;
   padding: 10px 32px;
-  border-top: 1px solid #e9e5e5;
+  border-top: 1px solid $light-grey;
   font-family: $font-sans;
   background-color: white;
-  color: #00000099;
+  color: $black-light;
 }
 .footer-logo {
   align-items: center;
@@ -158,19 +156,19 @@
   padding-top: 5px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .header-buttons,
   .footer-container {
     flex-direction: column;
     align-items: center;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: $tablet) {
   .time-mgmt-info {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: $mobile) {
   .header-title,
   .header-subtitle {
     display: inline-block;
