@@ -1,26 +1,7 @@
-/* 🔵 Primary Colors */
-$primary-color: #e12a2a;
-$secondary-color: #e15b3f;
-$tertiary-color: #e07d5a;
-$gradient-light: #de9a7b;
-$gradient-dark: #d9b4a0;
-
-/* 🎨 Text Colors */
-$text-color: #6d6565;
-$title-color: #252323;
-$text-color-white: white;
-
-/* 🔘 Button Colors */
-/* 🔘 Button Colors */
-$btn-primary: steelblue;
-$btn-danger: #e12a2a;
-$btn-light: white;
-$btn-dark: black;
-
-/* 🦶 Footer Colors */
-$footer-bg: white;
-$footer-border: #e9e5e5;
-
-/* 🎨 Image Filters */
+$light-grey: #f5f5f5;
+$black-light: #00000099;
+$deep-black: #000000de;
+$bright-orange: #ff3d00;
+$light-grey: #e9e5e5;
 $img-filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
   hue-rotate(357deg) brightness(145%) contrast(80%);
