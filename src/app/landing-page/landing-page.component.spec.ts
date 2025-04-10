@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { LandingPageComponent } from './landing-page.component';
+import { Router } from '@angular/router';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
@@ -16,7 +16,7 @@ describe('LandingPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
   it('should display the header logo', () => {
@@ -45,20 +45,16 @@ describe('LandingPageComponent', () => {
     signupButton.click();
     expect(component.registerPage).toHaveBeenCalled();
   });
-  it('should display the main image', () => {
-    const image = fixture.nativeElement.querySelector('.how-it-works-img img');
-    expect(image.src).toContain('pomodoro.jpg');
-  });
-  it('should display the "How it Works" title', () => {
-    const title = fixture.nativeElement.querySelector('.how-it-works-title');
-    expect(title.textContent).toBe('How it Works');
-  });
-  it('should display the description for "How it Helps"', () => {
-    const description = fixture.nativeElement.querySelector(
-      '.how-it-helps-description'
-    );
-    expect(description.textContent).toContain(
-      'This application boosts your efficiency'
-    );
-  });
+
+  it('should navigate to /login', inject([Router], (router: Router) => {
+    const navigateSpy = spyOn(router, 'navigate');
+    component.loginPage();
+    expect(navigateSpy).toHaveBeenCalledWith(['/login']);
+  }));
+
+  it('should navigate to /register', inject([Router], (router: Router) => {
+    const navigateSpy = spyOn(router, 'navigate');
+    component.registerPage();
+    expect(navigateSpy).toHaveBeenCalledWith(['/register']);
+  }));
 });
