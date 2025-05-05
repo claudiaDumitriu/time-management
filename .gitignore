@@ -1,1 +1,21 @@
-node_modules
+# Ignore Angular build and cache files
+.angular/
+dist/
+node_modules/
+
+# Ignore IDE-specific files (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore environment files (if any)
+.env
+
+# Ignore temporary files
+*.swp
+*.bak
+
+# Ignore all .pack files (if large)
+.angular/cache/**/*.pack
