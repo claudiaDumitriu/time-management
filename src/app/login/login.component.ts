@@ -7,43 +7,78 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, ErrorMessageComponent],
+  imports: [ReactiveFormsModule, ErrorMessageComponent, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {
+  loginError: string = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required, this.usernameOrEmailValidator]],
-      password: ['', [Validators.required]],
+      usernameOrEmail: [
+        '',
+        [Validators.required, this.usernameOrEmailValidator],
+      ],
+      password: ['', [Validators.required, this.passwordValidator]],
     });
   }
 
   usernameOrEmailValidator(control: AbstractControl) {
     const value = control.value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     const usernameRegex = /^[a-zA-Z0-9_.-]{3,}$/;
 
     if (emailRegex.test(value) || usernameRegex.test(value)) {
-      console.log(value);
       return null;
     }
-    return { invalidUsernameOrEmail: true }; // Invalid
+    return { invalidUsernameOrEmail: true };
   }
+
+  passwordValidator(control: AbstractControl) {
+    const value = control.value;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&/#^()_+\-=])[A-Za-z\d@$!%*?&/#^()_+\-=]{8,}$/;
+    if (passwordRegex.test(value)) {
+      return null;
+    }
+    return { invalidPassword: true };
+  }
+
+  onSubmit() {
+    if (!this.isFormValid) return;
+
+    const { usernameOrEmail, password } = this.loginForm.value;
+
+    this.authService.login(usernameOrEmail, password).subscribe((user) => {
+      console.log(user);
+      if (user) {
+        this.router.navigate(['/app/task-manager']);
+        this.loginError = '';
+      } else {
+        alert('Incorrect username or password.');
+        this.loginError = 'Invalid username or password.';
+      }
+    });
+  }
+
   get isFormValid(): boolean {
     return this.loginForm.valid;
   }
 
   registerPage() {
     this.router.navigate(['/register']);
-  }
-  taskManagerPage() {
-    this.router.navigate(['/task-manager']);
   }
 }

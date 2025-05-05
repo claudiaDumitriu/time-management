@@ -6,24 +6,33 @@
         <h2>Ness's Pomodoro</h2>
       </div>
       <h2 class="header-title">Login</h2>
-      <h3 class="header-subtitle">description</h3>
+      <div *ngIf="loginError" class="login-error">
+        {{ loginError }}
+      </div>
     </div>
 
     <div class="register-auth">
-      <form [formGroup]="loginForm" class="register-form">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="register-form"
+      >
         <div class="form-control">
           <input
             class="form-input"
             type="text"
             id="username"
             name="username"
-            formControlName="username"
+            formControlName="usernameOrEmail"
             placeholder=" "
+            [ngClass]="{ 'input-error': loginError }"
             required
           />
-          <label class="form-label" for="username">Username or email</label>
+          <label class="form-label" for="usernameOrEmail"
+            >Username or email</label
+          >
           <app-error-message
-            [control]="loginForm.get('username')"
+            [control]="loginForm.get('usernameOrEmail')"
           ></app-error-message>
         </div>
 
@@ -36,6 +45,7 @@
             placeholder=" "
             required
             formControlName="password"
+            [ngClass]="{ 'input-error': loginError }"
           />
           <label class="form-label" for="password">Password</label>
           <app-error-message
@@ -45,12 +55,7 @@
         <div class="forgot-password"><a>FORGOT PASSWORD?</a></div>
 
         <div class="login-btn">
-          <button
-            type="submit"
-            class="btn-login"
-            (click)="taskManagerPage()"
-            [disabled]="!isFormValid"
-          >
+          <button type="submit" class="btn-login" [disabled]="!isFormValid">
             LOG IN
           </button>
         </div>
