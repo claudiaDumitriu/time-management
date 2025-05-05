@@ -7,12 +7,14 @@ import { ArchiveComponent } from './pages/archive/archive.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', redirectTo: '/app', pathMatch: 'full' },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
 
   {
     path: 'app',

@@ -36,6 +36,10 @@ export class LoginComponent {
     });
   }
 
+  get isFormValid(): boolean {
+    return this.loginForm.valid;
+  }
+
   usernameOrEmailValidator(control: AbstractControl) {
     const value = control.value;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -65,20 +69,18 @@ export class LoginComponent {
     this.authService.login(usernameOrEmail, password).subscribe((user) => {
       console.log(user);
       if (user) {
-        this.router.navigate(['/app/task-manager']);
         this.loginError = '';
+        this.router.navigate(['/app/task-manager']);
       } else {
-        alert('Incorrect username or password.');
         this.loginError = 'Invalid username or password.';
       }
     });
   }
 
-  get isFormValid(): boolean {
-    return this.loginForm.valid;
-  }
-
   registerPage() {
     this.router.navigate(['/register']);
+  }
+  forgotPasswordPage() {
+    this.router.navigate(['/forgot-password']);
   }
 }
