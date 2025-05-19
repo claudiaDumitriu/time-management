@@ -1,30 +1,67 @@
 import { Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { LoginComponent } from './login/login.component';
-import { TaskManagerComponent } from './pages/task-manager/task-manager.component';
-import { SessionComponent } from './pages/session/session.component';
-import { ArchiveComponent } from './pages/archive/archive.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'register', component: RegisterPageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', redirectTo: '/app', pathMatch: 'full' },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./register-page/register-page.component').then(
+        (m) => m.RegisterPageComponent
+      ),
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: 'forgot-password',
+    loadComponent: () =>
+      import('./forgot-password/forgot-password.component').then(
+        (m) => m.ForgotPasswordComponent
+      ),
+  },
   {
     path: 'app',
-    component: DashboardComponent,
+    loadComponent: () =>
+      import('./dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
     children: [
-      { path: '', redirectTo: 'task-manager', pathMatch: 'full' },
-      { path: 'task-manager', component: TaskManagerComponent },
-      { path: 'session', component: SessionComponent },
-      { path: 'archive', component: ArchiveComponent },
-      { path: 'settings', component: SettingsComponent },
+      {
+        path: '',
+        redirectTo: 'task-manager',
+        pathMatch: 'full',
+      },
+      {
+        path: 'task-manager',
+        loadComponent: () =>
+          import('./pages/task-manager/task-manager.component').then(
+            (m) => m.TaskManagerComponent
+          ),
+      },
+      {
+        path: 'session',
+        loadComponent: () =>
+          import('./pages/session/session.component').then(
+            (m) => m.SessionComponent
+          ),
+      },
+      {
+        path: 'archive',
+        loadComponent: () =>
+          import('./pages/archive/archive.component').then(
+            (m) => m.ArchiveComponent
+          ),
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./pages/settings/settings.component').then(
+            (m) => m.SettingsComponent
+          ),
+      },
     ],
   },
 ];

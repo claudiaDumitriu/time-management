@@ -1,7 +1,7 @@
-<div class="register-container">
-  <div class="register-details">
-    <div class="register-header">
-      <div class="header-logo">
+<div class="login-container flex flex-col justify-center items-center h-screen">
+  <div class="login-details flex flex-col justify-center items-center">
+    <div class="login-header flex flex-col justify-center items-center">
+      <div class="header-logo flex flex-col justify-center items-center">
         <img src="assets/icons/stopwatch-svgrepo-com.svg" alt="" />
         <h2>Ness's Pomodoro</h2>
       </div>
@@ -10,11 +10,11 @@
         {{ loginError }}
       </div>
     </div>
-    <div class="register-auth">
+    <div class="login-auth">
       <form
         [formGroup]="loginForm"
         (ngSubmit)="onSubmit()"
-        class="register-form"
+        class="login-form flex flex-col justify-center items-center"
       >
         <div class="form-control">
           <input
@@ -63,7 +63,7 @@
     <button class="btn-register" (click)="registerPage()">
       DON'T HAVE AN ACCOUNT? REGISTER HERE
     </button>
-    <footer class="footer-description">
+    <footer class="footer-description flex justify-center items-center">
       A Ness Digital Engineering Product.
     </footer>
   </div>

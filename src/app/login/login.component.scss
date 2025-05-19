@@ -1,9 +1,7 @@
-@import "../../assets/styles/variables";
-@import "../../assets/styles/colors";
-@import "../../assets/styles/mixins";
+@import "variables";
+@import "colors";
 
-.register-container {
-  @include flex-center-column;
+.login-container {
   height: 100vh;
   background-image: linear-gradient(
     to right bottom,
@@ -14,20 +12,16 @@
     #d9b4a0
   );
 }
-.register-details {
-  @include flex-center-column;
+.login-details {
   width: 380px;
   background-color: white;
   border-radius: 3px;
-  padding: 30px;
+  padding: $space-xl;
 }
-.register-header {
-  @include flex-center-column;
-  margin-bottom: 15px;
+.login-header {
+  margin-bottom: $space-md;
 }
 .header-logo {
-  @include flex-center-column;
-
   margin: 0px;
 }
 .header-logo h2 {
@@ -37,16 +31,16 @@
 .header-logo img {
   filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
     hue-rotate(357deg) brightness(145%) contrast(80%);
-  width: 35px;
-  height: 35px;
+  width: $space-xl;
+  height: $space-xl;
 }
-.register-header h3 {
+.login-header h3 {
   color: #a79999;
   font-family: $font-sans;
   font-weight: 500;
   font-size: 13px;
 }
-.register-header h2 {
+.login-header h2 {
   color: #252323;
   font-family: $font-sans;
   font-weight: 300;
@@ -54,16 +48,15 @@
   margin: 0px;
   line-height: 2;
 }
-.register-auth {
+.login-auth {
   width: 100%;
 }
-.register-form {
-  @include flex-center-column;
+.login-form {
   width: 100%;
 }
 .form-control {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: $space-lg;
   width: 100%;
 }
 .form-group {
@@ -71,8 +64,8 @@
 }
 .form-input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: $space-xs;
+  margin-bottom: $space-xxs;
   border: none;
   border-bottom: 1px solid #b4b3b3;
   font-size: 16px;
@@ -101,8 +94,7 @@ input.ng-touched.ng-invalid {
   color: #9b9797;
 }
 .footer-description {
-  @include flex-center;
-  margin-top: 20px;
+  margin-top: $space-md;
   color: #a79999;
   font-size: 13px;
   font-family: $font-sans;
@@ -136,7 +128,7 @@ input.ng-touched.ng-invalid {
 .login-btn {
   display: flex;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: $space-xs;
 }
 .forgot-password {
   justify-content: flex-start;
@@ -144,12 +136,12 @@ input.ng-touched.ng-invalid {
   color: $bright-orange;
   font-size: 12px;
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: $space-xl;
   font-weight: 600;
   cursor: pointer;
 }
 .form-control a {
-  margin-top: 20px;
+  margin-top: $space-md;
 }
 .control-error {
   color: red;
@@ -164,8 +156,8 @@ input.ng-touched.ng-invalid {
 .login-error {
   color: #c62828;
   font-size: 16px;
-  margin: 20px;
-  padding: 10px;
+  margin: $space-md;
+  padding: $space-xs;
   background-color: #faebeb;
   border-radius: 5px;
 }
