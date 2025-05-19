@@ -1,32 +1,39 @@
-<div class="register-container">
-  <div class="register-details">
-    <div class="register-header">
-      <div class="header-logo">
+<div class="login-container flex flex-col justify-center items-center h-screen">
+  <div class="login-details flex flex-col justify-center items-center">
+    <div class="login-header flex flex-col justify-center items-center">
+      <div class="header-logo flex flex-col justify-center items-center">
         <img src="assets/icons/stopwatch-svgrepo-com.svg" alt="" />
         <h2>Ness's Pomodoro</h2>
       </div>
       <h2 class="header-title">Login</h2>
-      <h3 class="header-subtitle">description</h3>
+      <div *ngIf="loginError" class="login-error">
+        {{ loginError }}
+      </div>
     </div>
-
-    <div class="register-auth">
-      <form [formGroup]="loginForm" class="register-form">
+    <div class="login-auth">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="login-form flex flex-col justify-center items-center"
+      >
         <div class="form-control">
           <input
             class="form-input"
             type="text"
             id="username"
             name="username"
-            formControlName="username"
+            formControlName="usernameOrEmail"
             placeholder=" "
+            [ngClass]="{ 'input-error': loginError }"
             required
           />
-          <label class="form-label" for="username">Username or email</label>
+          <label class="form-label" for="usernameOrEmail"
+            >Username or email</label
+          >
           <app-error-message
-            [control]="loginForm.get('username')"
+            [control]="loginForm.get('usernameOrEmail')"
           ></app-error-message>
         </div>
-
         <div class="form-control">
           <input
             class="form-input"
@@ -36,32 +43,27 @@
             placeholder=" "
             required
             formControlName="password"
+            [ngClass]="{ 'input-error': loginError }"
           />
           <label class="form-label" for="password">Password</label>
           <app-error-message
             [control]="loginForm.get('password')"
           ></app-error-message>
         </div>
-        <div class="forgot-password"><a>FORGOT PASSWORD?</a></div>
-
+        <div class="forgot-password">
+          <a (click)="forgotPasswordPage()">FORGOT PASSWORD?</a>
+        </div>
         <div class="login-btn">
-          <button
-            type="submit"
-            class="btn-login"
-            (click)="taskManagerPage()"
-            [disabled]="!isFormValid"
-          >
+          <button type="submit" class="btn-login" [disabled]="!isFormValid">
             LOG IN
           </button>
         </div>
       </form>
     </div>
-
     <button class="btn-register" (click)="registerPage()">
       DON'T HAVE AN ACCOUNT? REGISTER HERE
     </button>
-
-    <footer class="footer-description">
+    <footer class="footer-description flex justify-center items-center">
       A Ness Digital Engineering Product.
     </footer>
   </div>

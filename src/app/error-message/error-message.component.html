@@ -1,22 +1,25 @@
 <div *ngIf="control?.invalid && control?.touched" class="invalid-feedback">
-  <small *ngIf="control?.errors?.['required']">Field can't be empty.</small>
-  <small *ngIf="control?.errors?.['email']">Email format is not valid.</small>
+  <small *ngIf="control?.errors?.['required']">Field can't be empty</small>
+  <small *ngIf="control?.errors?.['email']">Email format is not valid</small>
   <small *ngIf="control?.errors?.['minlength']"
-    >Use at least 8 characters.</small
+    >Use at least 8 characters</small
   >
   <small *ngIf="control?.errors?.['emailNotUnique']"
-    >Email already exists.</small
+    >Email already exists</small
   >
   <small *ngIf="control?.errors?.['usernameNotUnique']"
-    >Username already exists.</small
+    >Username already exists</small
   >
   <small *ngIf="control?.errors?.['weakPassword']"
-    >Password format is not valid.</small
+    >Password format is not valid</small
   >
   <small *ngIf="control?.errors?.['passwordsNotEqual']"
-    >Password not equal.</small
+    >Password not equal</small
   >
   <small *ngIf="control?.errors?.['invalidUsernameOrEmail'] && control?.value"
-    >Invalid Username or Email.</small
+    >Invalid Username or Email</small
+  >
+  <small *ngIf="control?.errors?.['invalidPassword'] && control?.value"
+    >Invalid Password</small
   >
 </div>

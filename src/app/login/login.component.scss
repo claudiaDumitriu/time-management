@@ -1,10 +1,8 @@
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+@import "variables";
+@import "colors";
 
+.login-container {
+  height: 100vh;
   background-image: linear-gradient(
     to right bottom,
     #e12a2a,
@@ -14,26 +12,16 @@
     #d9b4a0
   );
 }
-.register-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 350px;
+.login-details {
+  width: 380px;
   background-color: white;
   border-radius: 3px;
-  padding: 30px;
+  padding: $space-xl;
 }
-.register-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.login-header {
+  margin-bottom: $space-md;
 }
 .header-logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0px;
 }
 .header-logo h2 {
@@ -43,43 +31,41 @@
 .header-logo img {
   filter: brightness(0) saturate(100%) invert(30%) sepia(73%) saturate(3000%)
     hue-rotate(357deg) brightness(145%) contrast(80%);
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
+  width: $space-xl;
+  height: $space-xl;
 }
-.register-header h3 {
+.login-header h3 {
   color: #a79999;
-  font-family: sans-serif;
+  font-family: $font-sans;
   font-weight: 500;
   font-size: 13px;
 }
-.register-header h2 {
+.login-header h2 {
   color: #252323;
-  font-family: sans-serif;
+  font-family: $font-sans;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 22px;
   margin: 0px;
+  line-height: 2;
 }
-.register-auth {
+.login-auth {
   width: 100%;
 }
-.register-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.login-form {
   width: 100%;
 }
 .form-control {
   position: relative;
-  margin-bottom: 20px;
-  width: -webkit-fill-available;
+  margin-bottom: $space-lg;
+  width: 100%;
 }
 .form-group {
-  width: -webkit-fill-available;
+  width: 100%;
 }
 .form-input {
   width: 100%;
-  padding: 10px;
+  padding: $space-xs;
+  margin-bottom: $space-xxs;
   border: none;
   border-bottom: 1px solid #b4b3b3;
   font-size: 16px;
@@ -108,55 +94,73 @@ input.ng-touched.ng-invalid {
   color: #9b9797;
 }
 .footer-description {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  margin-top: $space-md;
   color: #a79999;
   font-size: 13px;
-  font-family: sans-serif;
+  font-family: $font-sans;
 }
 .btn-login {
   height: 40px;
   border: none;
   border-radius: 3px;
-  background-color: #f42727;
+  background-color: $primary-red;
   color: white;
   font-size: 13px;
   width: 100%;
   cursor: pointer;
+
+  &:disabled {
+    background-color: $neutral-light;
+    color: $gray-medium;
+  }
 }
 .btn-register {
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid $black-light;
   border-radius: 3px;
-  background-color: #f3f0f0;
+  background-color: $neutral-light;
   color: black;
   font-size: 12px;
   cursor: pointer;
   width: 100%;
   font-weight: 500;
 }
-.btn-login:disabled {
-  background-color: #e2e0e0;
-  color: #9b9797;
-}
 .login-btn {
   display: flex;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: $space-xs;
 }
 .forgot-password {
   justify-content: flex-start;
   width: 100%;
-  color: #f04040;
+  color: $bright-orange;
   font-size: 12px;
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: $space-xl;
   font-weight: 600;
+  cursor: pointer;
 }
 .form-control a {
-  margin-top: 20px;
+  margin-top: $space-md;
 }
 .control-error {
   color: red;
+}
+.form-control app-error-message {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  font-size: 0.75rem;
+  color: red;
+}
+.login-error {
+  color: #c62828;
+  font-size: 16px;
+  margin: $space-md;
+  padding: $space-xs;
+  background-color: #faebeb;
+  border-radius: 5px;
+}
+.input-error {
+  border-color: red;
 }
